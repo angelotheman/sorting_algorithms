@@ -17,5 +17,6 @@ Sorting algorithmns are used to arrange elements of an array/list in a specific 
 
 ## Project Partners
 - [Kwabena Twumasi](https://github.com/angelotheman)
+- [Ubonisrael Akapnudoh](https://github.com/ubonisrael)
 
 Happy Coding 🥂
