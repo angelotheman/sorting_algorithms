@@ -25,6 +25,7 @@ void print_array(const int *array, size_t size);
 
 /* ---- SORT FUNCTIONS ------ */
 void bubble_sort(int *array, size_t size);
+void selection_sort(int *array, size_t size);
 
 /* ---- HELPER FUNCTIONS ---- */
 void swap(int *var1, int *var2);
