@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	int sarray[] = {100, 48, 64, 85, 56, 73, 18, 33, 99, 83};
+	int sarray[] = {1, 4, 6, 8, 15, 19, 20, 33, 56, 83};
 	size_t n = sizeof(sarray) / sizeof(sarray[0]);
 
 	print_array(sarray, n);
