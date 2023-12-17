@@ -2,8 +2,8 @@
 
 /**
  * swap - Performs the swap function
- * a: First arg
- * b: Second arg
+ * @a: First arg
+ * @b: Second arg
  */
 
 
@@ -16,6 +16,16 @@ void swap(int *a, int *b)
 	*b = tmp;
 }
 
+
+/**
+ * partition - To find pivot point
+ * @array: Array of elements
+ * @low: Lowest index
+ * @high: Highest index
+ * @size: Size of the array
+ *
+ * Return: Index of the pivot element
+ */
 
 int partition(int *array, int low, int high, size_t size)
 {
@@ -41,6 +51,14 @@ int partition(int *array, int low, int high, size_t size)
 }
 
 
+/**
+ * quick_sort_recursion - Takes care of the recursion algorithm
+ * @array: Array of elements
+ * @low: lowest value index
+ * @high: Highest value index
+ * @size: Size of the array
+ */
+
 void quick_sort_recursion(int *array, int low, int high, size_t size)
 {
 	int pivot_idx;
@@ -54,6 +72,13 @@ void quick_sort_recursion(int *array, int low, int high, size_t size)
 		quick_sort_recursion(array, pivot_idx + 1, high, size);
 	}
 }
+
+
+/**
+ * quick_sort - Algorithm to implement quick sort
+ * @array: Array of elements
+ * @size: Size of the array
+ */
 
 void quick_sort(int *array, size_t size)
 {
