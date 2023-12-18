@@ -33,11 +33,8 @@ void counting_sort(int *array, size_t size);
 
 /* ---- HELPER FUNCTIONS ---- */
 void swap(int *var1, int *var2);
-<<<<<<< HEAD
 int partition(int *array, int low, int high, size_t size);
 void quick_sort_recursion(int *array, int low, int high, size_t size);
-=======
 int partition(int *array, int low, int high, size_t);
->>>>>>> e7d3fac0f8b0e7eaf19ddecadcd3cf965892bb0f
 
 #endif /* SORT_H */
