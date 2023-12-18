@@ -47,10 +47,11 @@ int get_max(int *array, size_t size)
 
 
 /**
- * counting_sort - sorts an array of integers in ascending order using
+ * count_sort - sorts an array of integers in ascending order using
  *				the Counting Sort algorithm
  * @array: unsorted array
- * @size array size
+ * @size: array size
+ * @pos: LSD position
  * Return: void
  */
 
@@ -65,13 +66,10 @@ void count_sort(int *array, size_t size, int pos)
 	for (i = 0; i < (int)size; i++)
 		count[(array[i] / pos) % 10]++;
 
-	print_array(count, 10);
 	for (i = 1; i < 10; i++)
 		count[i] = count[i] + count[i - 1];
-	print_array(count, 10);
 	for (i = size - 1; i >= 0; i--)
 		barray[--count[(array[i] / pos) % 10]] = array[i];
-	print_array(barray, size);
 	for (i = 0; i < (int)size; i++)
 		array[i] = barray[i];
 
