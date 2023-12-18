@@ -13,6 +13,8 @@ void shell_sort(int *array, size_t size)
 	int i;
 	size_t j, gap;
 
+	if (size < 2)
+		return;
 	gap = 1;
 	while (gap < (size / 3))
 		gap = 3 * gap + 1;
@@ -26,6 +28,9 @@ void shell_sort(int *array, size_t size)
 				if (array[i + gap] > array[i])
 					break;
 				swap(&array[i + gap], &array[i]);
+				printf("------------------------\n");
+				print_array(array, size);
+				printf("------------------------\n");
 			}
 		}
 		print_array(array, size);
