@@ -14,6 +14,8 @@ void counting_sort(int *array, size_t size)
 	int k;
 	int *count, *barray;
 
+	if (size < 2)
+		return;
 	k = 0;
 	for (i = 0; i < size; i++)
 	{
