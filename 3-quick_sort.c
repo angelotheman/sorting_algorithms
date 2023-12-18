@@ -4,6 +4,7 @@
  * swap - Performs the swap function
  * @a: First arg
  * @b: Second arg
+ * Return: void
  */
 
 
@@ -56,6 +57,7 @@ int partition(int *array, int low, int high, size_t size)
  * @low: lowest value index
  * @high: Highest value index
  * @size: Size of the array
+ * Return: void
  */
 
 void quick_sort_recursion(int *array, int low, int high, size_t size)
@@ -77,6 +79,7 @@ void quick_sort_recursion(int *array, int low, int high, size_t size)
  * quick_sort - Algorithm to implement quick sort
  * @array: Array of elements
  * @size: Size of the array
+ * Return: void
  */
 
 void quick_sort(int *array, size_t size)
