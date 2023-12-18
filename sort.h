@@ -33,6 +33,7 @@ void counting_sort(int *array, size_t size);
 
 /* ---- HELPER FUNCTIONS ---- */
 void swap(int *var1, int *var2);
-size_t partition(int *array, size_t low, size_t high);
+int partition(int *array, int low, int high, size_t size);
+void quick_sort_recursion(int *array, int low, int high, size_t size);
 
 #endif /* SORT_H */
