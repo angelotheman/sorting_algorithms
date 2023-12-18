@@ -22,7 +22,6 @@ void counting_sort(int *array, size_t size)
 		if (k < array[i])
 			k = array[i];
 	}
-
 	c_size = k + 1;
 	count = malloc(sizeof(int) * c_size);
 	if (count == NULL)
@@ -35,18 +34,14 @@ void counting_sort(int *array, size_t size)
 		free(count);
 		return;
 	}
-
 	for (i = 0; i < size; i++)
 		count[array[i]]++;
 
 	for (i = 1; i < c_size; i++)
 		count[i] = count[i] + count[i - 1];
-
 	print_array(count, c_size);
-
 	for (i = 0; i < size; i++)
 		barray[--count[array[i]]] = array[i];
-
 	for (i = 0; i < size; i++)
 		array[i] = barray[i];
 
