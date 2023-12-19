@@ -4,7 +4,7 @@ void swap(int *var1, int *var2);
 void heapify(int *array, size_t o_size, size_t size, size_t n);
 
 /**
- * heap_sort - sorts an integer using the heap sort algorithm
+ * bitonic_sort - sorts an integer using the bitonic sort algorithm
  * @array: unsorted array
  * @size: size of array
  * Return: void
