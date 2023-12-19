@@ -5,6 +5,14 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+/**
+ * enum kind_e - Playing card
+ *
+ * @SPADE: Value of the card
+ * @HEART: Value of the card
+ * @DIAMOND: Value of the card
+ * @CLUB: Value of the card
+ */
 typedef enum kind_e
 {
 	SPADE = 0,
