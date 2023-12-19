@@ -1,5 +1,6 @@
 #include "sort.h"
 
+void cocktail_sort_list_reverse(listint_t **list, listint_t **curr);
 /**
  * cocktail_sort_list - sorts a doubly linked list using the
  * 			cocktail sort algorithm
@@ -18,6 +19,7 @@ void cocktail_sort_list(listint_t **list)
 	while (swapped)
 	{
 		swapped = 0;
+		printf("curr->n %d\n", curr->n);
 		while (curr->next != NULL)
 		{
 			loop_next = curr->next;
@@ -44,12 +46,29 @@ void cocktail_sort_list(listint_t **list)
 		}
 		if (swapped == 0)
 			break;
-		while (curr->prev != NULL)
+		cocktail_sort_list_reverse(list, &curr);
+	}
+}
+
+/**
+ * cocktail_sort_list_reverse - traverses in reverse while sorting
+ * 				a doubly linked list using the
+ * 				cocktail sort algorithm
+ * @list: doubly linked list to be sorted
+ * @curr: current position in linked list
+ * Return: void
+ */
+
+void cocktail_sort_list_reverse(listint_t **list, listint_t **curr)
+{
+	listint_t *prev, *next, *tmp, *loop_next;
+
+	while ((*curr)->prev != NULL)
 		{
-			loop_next = curr->prev;
-			if (curr->n < curr->prev->n)
+			loop_next = (*curr)->prev;
+			if ((*curr)->n < (*curr)->prev->n)
 			{
-				tmp = curr;
+				tmp = *curr;
 				prev = tmp->prev;
 				next = tmp->next;
 
@@ -65,7 +84,6 @@ void cocktail_sort_list(listint_t **list)
 				prev->next = next;
 				print_list(*list);
 			}
-			curr = loop_next;
+			*curr = loop_next;
 		}
-	}
 }
