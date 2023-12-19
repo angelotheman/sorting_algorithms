@@ -30,11 +30,16 @@ void insertion_sort_list(listint_t **list);
 void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
 
 /* ---- HELPER FUNCTIONS ---- */
 void swap(int *var1, int *var2);
 int partition(int *array, int low, int high, size_t size);
 void quick_sort_recursion(int *array, int low, int high, size_t size);
 int partition(int *array, int low, int high, size_t);
+
+/* -- MERGE SORT FUNCTIONS -- */
+void merge_recursion(int *array, int *new_array, size_t low, size_t high);
+void merge(int *array, int *new_array, size_t low, size_t mid, size_t high);
 
 #endif /* SORT_H */
