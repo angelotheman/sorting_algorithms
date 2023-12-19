@@ -1,7 +1,7 @@
 #include "sort.h"
 
 void swap(int *var1, int *var2);
-void heapify(int *array, size_t size, size_t n);
+void heapify(int *array, size_t o_size, size_t size, size_t n);
 
 /**
  * heap_sort - sorts an integer using the heap sort algorithm
@@ -15,16 +15,14 @@ void heap_sort(int *array, size_t size)
     size_t i;
 
     for (i = size / 2; i >= 1; i--)
-        heapify(array, size, i);
+        heapify(array, size, size, i);
 
     print_array(array, size);
     for (i = size; i >= 1; i--)
     {
-        printf("%d %d\n", array[i - 1], array[0]);
         swap(&array[i - 1], &array[0]);
         print_array(array, size);
-        heapify(array, i, 1);
-        print_array(array, size);
+        heapify(array, size, i, 1);
     }
 }
 
@@ -37,7 +35,7 @@ void heap_sort(int *array, size_t size)
  * Return: void
  */
 
-void heapify(int *array, size_t size, size_t n)
+void heapify(int *array, size_t o_size, size_t size, size_t n)
 {
     size_t largest_index, left_child, right_child;
 
@@ -53,9 +51,9 @@ void heapify(int *array, size_t size, size_t n)
 
     if (largest_index != n)
     {
-        printf("heapify swap, largest %ld (%d) != n %ld (%d)\n", largest_index - 1, array[largest_index - 1], n - 1, array[n - 1]);
         swap(&array[largest_index - 1], &array[n - 1]);
-        heapify(array, size, largest_index);
+        print_array(array, o_size);
+        heapify(array, o_size, size, largest_index);
     }
 }
 
