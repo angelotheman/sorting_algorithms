@@ -17,10 +17,14 @@ void heap_sort(int *array, size_t size)
     for (i = size / 2; i >= 1; i--)
         heapify(array, size, i);
 
+    print_array(array, size);
     for (i = size; i >= 1; i--)
     {
-        swap(&array[i], &array[1]);
-        heapify(array, size, 1);
+        printf("%d %d\n", array[i - 1], array[0]);
+        swap(&array[i - 1], &array[0]);
+        print_array(array, size);
+        heapify(array, i, 1);
+        print_array(array, size);
     }
 }
 
@@ -41,15 +45,16 @@ void heapify(int *array, size_t size, size_t n)
     left_child = 2 * n;
     right_child = 2 * n + 1;
 
-    if (left_child <= size && array[largest_index] < array[left_child])
+    if (left_child < size && array[largest_index - 1] < array[left_child - 1])
         largest_index = left_child;
 
-    if (right_child <= size && array[largest_index] < array[right_child])
+    if (right_child < size && array[largest_index - 1] < array[right_child - 1])
         largest_index = right_child;
 
     if (largest_index != n)
     {
-        swap(&array[largest_index], &array[n]);
+        printf("heapify swap, largest %ld (%d) != n %ld (%d)\n", largest_index - 1, array[largest_index - 1], n - 1, array[n - 1]);
+        swap(&array[largest_index - 1], &array[n - 1]);
         heapify(array, size, largest_index);
     }
 }
