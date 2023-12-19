@@ -30,11 +30,8 @@ void insertion_sort_list(listint_t **list);
 void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
-<<<<<<< HEAD
 void merge_sort(int *array, size_t size);
-=======
 void radix_sort(int *array, size_t size);
->>>>>>> 0c4681c4d974a0d48d258abd863a11b96c09808d
 
 /* ---- HELPER FUNCTIONS ---- */
 void swap(int *var1, int *var2);
