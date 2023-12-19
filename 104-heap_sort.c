@@ -22,7 +22,7 @@ void heap_sort(int *array, size_t size)
 
 	for (i = size; i >= 1; i--)
 	{
-		if (array[i - 1] != array[0])
+		if (&array[i - 1] != &array[0])
 		{
 			swap(&array[i - 1], &array[0]);
 			print_array(array, size);
