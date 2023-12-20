@@ -26,8 +26,10 @@ void heap_sort(int *array, size_t size)
 		{
 			swap(&array[i - 1], &array[0]);
 			print_array(array, size);
+			i--;
+			heapify(array, size, i, 1);
+			i++;
 		}
-		heapify(array, size, i, 1);
 	}
 }
 
@@ -49,17 +51,17 @@ void heapify(int *array, size_t o_size, size_t size, size_t n)
 	left_child = 2 * n;
 	right_child = 2 * n + 1;
 
-	if (left_child < size && array[largest_index - 1] < array[left_child - 1])
+	if (left_child <= size && array[largest_index - 1] < array[left_child - 1])
 		largest_index = left_child;
 
-	if (right_child < size && array[largest_index - 1] < array[right_child - 1])
+	if (right_child <= size && array[largest_index - 1] < array[right_child - 1])
 		largest_index = right_child;
 
 	if (largest_index != n)
 	{
 		swap(&array[largest_index - 1], &array[n - 1]);
 		print_array(array, o_size);
-		heapify(array, o_size, size, largest_index);
+		heapify(array, o_size, size - 1, largest_index);
 	}
 }
 
